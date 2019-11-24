@@ -1,2 +1,5 @@
-# learn-api-node-mongos
-learn api with express, node and mongos
+# Web Service For Selling Rockets and Components
+
+Learn RESTful API for selling rockets and it's components
+
+

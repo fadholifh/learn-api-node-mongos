@@ -1,0 +1,33 @@
+const _ = require('lodash')
+
+const product = app => {
+    let _products = []
+
+    //create
+    app.post('/api/products', (req, res) => {
+        // console.log(req.body)
+        res.json({"info": "Product Created"})
+        _products.push(req.body)
+    })
+    //read
+    app.get('/api/products', (req, res) => {
+        res.json(_products)
+    })
+    //update
+    app.put('/api/products/:id', (req, res) => {
+        const index = _.findIndex(_products, {
+            id: parseInt(req.params.id)
+        })
+        _.merge(_products[index], req.body)
+        res.json({"info":"Product updated"})
+    })
+    //delete
+    app.delete('/api/products/:id', (req, res) => {
+        _.remove(_products, product => {
+            return product.id === parseInt(req.params.id)
+        })
+        res.json({"info":"Product removed"})
+    })
+}
+
+module.exports = product
