@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0-bpfaa.gcp.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://admin:@cluster0-bpfaa.gcp.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true
 })
 
